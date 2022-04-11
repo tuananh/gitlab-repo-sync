@@ -1,0 +1,33 @@
+gitlab-repo-sync
+----------------
+
+Allow to sync all projects in a group from 1 GitLab instance to another.
+
+- [x] Sync all branches
+- [x] Sync all tags
+- [x] Ignore certain project(s)/group(s) if specified
+- [x] Sync in parallel
+- [x] Sync group and repo name exact as is. Currently, we're using `path` for name. This may require another API call to get src group name so make this optional maybe.
+
+## Usage
+
+```sh
+./sync.py \
+    --gitlab-src-url https://source-gitlab.com \
+    --gitlab-dest-url https://destination-gitlab.com \
+    --src-token <src_token> \
+    --dest-token <dest_token> \
+    --groupid <source_group_id> \
+    --cachedir /tmp/test-sync-repo \
+    --ignore-project-paths data/proj1,data/proj2
+```
+
+## License
+
+Copyright 2022 Tuan Anh Tran <me@tuananh.org>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
